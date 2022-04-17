@@ -5,9 +5,9 @@
 // let l = 0;
 // let forward = true;
 // function updateLed() {
-    
+
 //     if (forward) {
-//         leds[i].style.opacity = "1"; 
+//         leds[i].style.opacity = "1";
 //         l++;
 //         if (l > 5) {
 //             l = 4;
@@ -30,8 +30,7 @@
 const speed = 150;
 const leds = document.getElementsByClassName("led-glow");
 
-
-let forward = false;
+let direction = 1;
 let l = 1;
 function updateLeds() {
   clearTimeout(ledTimeout);
@@ -43,28 +42,12 @@ function updateLeds() {
     }
     led.style.opacity = opacity;
   }
-  if (forward) {
-    l++;
-    if (l > 5) {
-      l = 4;
-      forward = false;
-    }
-  } else {
-    l--;
-    if (l < 0) {
-      l = 1;
-      forward = true;
-    }
+  l += direction;
+  if (l > 5 || l < 0) {
+    l -= direction * 2;
+    direction *= -1;
   }
   leds[l].style.opacity = 1;
   ledTimeout = setTimeout(updateLeds, speed);
 }
 let ledTimeout = setTimeout(updateLeds, speed);
-
-
-
-
-
-
-
-
