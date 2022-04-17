@@ -6,7 +6,7 @@ $glow-fade: rgb(239, 159, 30);
 
 
 .lights-container {
-    width: 500px;
+    width: 100%;
     height: 100px;
     background-color: $black;
     display: flex;
@@ -26,12 +26,16 @@ $glow-fade: rgb(239, 159, 30);
         width: 100%;
         height: 100%;
         border-radius: 50%;
+        background: radial-gradient(circle, rgba(255, 255, 255, 1) 5%, rgba(248, 150, 3, 0.5) 30%, rgba(248, 150, 3, 0) 50%);
+        opacity: 0;
+        // transition: 1s;
     }
 
-    .animate {
-        animation: led-blink 0.3s linear forwards;
-        background: radial-gradient(circle, rgba(255, 255, 255, 1) 5%, rgba(248, 150, 3, 0.5) 30%, rgba(248, 150, 3, 0) 50%);
-    }
+
+    // .animate {
+    //     animation: led-blink 0.3s linear forwards;
+    //     background: radial-gradient(circle, rgba(255, 255, 255, 1) 5%, rgba(248, 150, 3, 0.5) 30%, rgba(248, 150, 3, 0) 50%);
+    // }
 
 
 }
@@ -50,21 +54,17 @@ $glow-fade: rgb(239, 159, 30);
 //     }
 // }
 
-@keyframes led-blink {
+// @keyframes led-blink {
 
-    0% {
-        opacity: 0;
-    }
+//     0% {
+//         opacity: 1;
+//     }
 
-    50% {
-        opacity: 1;
-    }
+//     100% {
+//         opacity: 0;
+//     }
 
-    100% {
-        opacity: 0;
-    }
-
-}
+// }
 
 // @keyframes fadein {
 
