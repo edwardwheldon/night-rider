@@ -1,5 +1,12 @@
-const speed = 90;
+
 const leds = document.getElementsByClassName("led-glow");
+let speed = 150;
+const slider = document.getElementById("slider");
+
+slider.oninput = function() {
+  speed = this.value;
+  console.log(speed)
+}
 
 function reduceLedBrightness() {
   for (const led of leds) {
