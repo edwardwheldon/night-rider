@@ -1,4 +1,4 @@
-const speed = 150;
+const speed = 90;
 const leds = document.getElementsByClassName("led-glow");
 
 function reduceLedBrightness() {
